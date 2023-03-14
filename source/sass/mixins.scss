@@ -74,6 +74,40 @@
   }
 }
 
+@mixin font($font, $src, $font-weight: normal, $font-style: normal) {
+  font-family: "#{$font}";
+  src: url("../../fonts/#{$src}.woff2") format("woff2"),
+    url("../../fonts/#{$src}.woff") format("woff");
+
+  font: {
+    weight: $font-weight;
+    style: $font-style;
+    display: swap;
+  }
+}
+
+@mixin font-global($font) {
+  font: {
+    family: $font, $specify-families;
+    style: normal;
+    weight: normal;
+    size: 15px;
+  }
+
+  line-height: 24px;
+  color: $color__base--black;
+}
+
+@mixin font-text($font-weight: inherit, $font-size: inherit, $line-height: inherit, $color: inherit) {
+  font: {
+    weight: $font-weight;
+    size: $font-size;
+  }
+
+  line-height: $line-height;
+  color: $color;
+}
+
 // Mobile first
 
 // @mixin vp-375 {
