@@ -9,22 +9,26 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  max-width: 1222px;
 }
 
-.header__logo {}
+.header__logo {
+  display: flex;
+  gap: 15px;
+}
 
 .header__logo-img {}
 
 .header__logo-text {}
 
 .header__logo-name {
-  @include font($ff-roboto, 700, 25px, 29px, $color-alice-blue);
+  @include font($ff-robotocondensed, 700, 25px, 29px, $color-alice-blue);
   margin: 0;
 }
 
 .header__logo-slogan {
-  margin: 0;
   @include font($ff-roboto, 500, 12px, 14px, $color-transparent-white);
+  margin: 0;
 }
 
 .header__contacts {
@@ -34,7 +38,10 @@
   justify-content: space-between;
 }
 
-.header__link {}
+.header__link {
+  display: flex;
+  gap: 15px;
+}
 
 .header__link-email {
 }
@@ -47,6 +54,4 @@
 }
 
 .header__btn {
-  @include font($ff-robotocondensed, 700, 14px, 16px, $color-alice-blue);
-  text-transform: uppercase;
 }

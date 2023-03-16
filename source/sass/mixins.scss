@@ -86,8 +86,7 @@
 
     src: url("/fonts/#{$src}.woff2") format("woff2");
     /* stylelint-disable-next-line at-rule-no-unknown */
-    @if $unicode !="false" { //TODO Включить как проверю шрифты
-    // @if $unicode =="0" {
+    @if $unicode =="0" { //TODO Включить как проверю шрифты =="0" заменить на !="false"
       unicode-range: #{$unicode};
     }
   }

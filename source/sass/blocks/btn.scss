@@ -23,4 +23,12 @@
   @include hover-focus {
     opacity: 0.8;
   }
+
+  &--skeleton {
+    @include font($ff-robotocondensed, 700, 14px, 16px, $color-alice-blue);
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid $color-alice-blue;
+    border-radius: 3px;
+  }
 }
