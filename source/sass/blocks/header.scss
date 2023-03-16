@@ -1,5 +1,39 @@
 .header {
   min-height: 120px;
   background: $black-to-bottom;
+  display: flex;
 }
 
+.header__container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header__logo {}
+
+.header__logo-img {}
+
+.header__logo-text {
+}
+
+.header__logo-name {
+  @include font($ff-roboto, 700, 25px, 29px, $color-alice-blue);
+  margin: 0;
+}
+
+.header__logo-slogan {
+  margin: 0;
+}
+
+.header__contacts {
+  display: flex;
+  min-width: 480px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+.header__call-btn {}

@@ -84,7 +84,7 @@
       display: swap;
     }
 
-    src: url("../fonts/#{$src}.woff2") format("woff2");
+    src: url("/fonts/#{$src}.woff2") format("woff2");
     /* stylelint-disable-next-line at-rule-no-unknown */
     @if $unicode !="none" {
       unicode-range: #{$unicode};
@@ -92,10 +92,11 @@
   }
 }
 
-@mixin font($font-weight: inherit, $font-size: inherit, $line-height: inherit, $color: inherit) {
+@mixin font($font-family: inherit, $font-weight: inherit, $font-size: inherit, $line-height: inherit, $color: inherit) {
   font: {
     weight: $font-weight;
     size: $font-size;
+    family: $font-family;
   }
 
   line-height: $line-height;
