@@ -15,8 +15,7 @@
 
 .header__logo-img {}
 
-.header__logo-text {
-}
+.header__logo-text {}
 
 .header__logo-name {
   @include font($ff-roboto, 700, 25px, 29px, $color-alice-blue);
@@ -25,6 +24,7 @@
 
 .header__logo-slogan {
   margin: 0;
+  @include font($ff-roboto, 500, 12px, 14px, $color-transparent-white);
 }
 
 .header__contacts {
@@ -34,6 +34,19 @@
   justify-content: space-between;
 }
 
+.header__link {}
 
+.header__link-email {
+}
 
-.header__call-btn {}
+.header__link-text {
+  @include font($ff-ptmono, 400, 16px, 18px, $color-alice-blue);
+}
+
+.header__link-phone {
+}
+
+.header__btn {
+  @include font($ff-robotocondensed, 700, 14px, 16px, $color-alice-blue);
+  text-transform: uppercase;
+}
