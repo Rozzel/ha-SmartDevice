@@ -27,9 +27,6 @@
   gap: 15px;
 }
 
-.header__logo-img {
-}
-
 .header__logo-text {
   display: flex;
   flex-direction: column;
@@ -68,17 +65,12 @@
   gap: 15px;
 }
 
-.header__link-email {
-}
-
 .header__link-text {
   @include font($ff-ptmono, 400, 16px, 18px, $color-alice-blue);
+
   @include vp-1023 {
     display: none;
   }
-}
-
-.header__link-phone {
 }
 
 .header__btn {
