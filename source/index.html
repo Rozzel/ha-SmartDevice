@@ -46,11 +46,20 @@
     <main>
       <section class="cover">
         <div class="container cover__container">
-          <h2 class="cover__title"></h2>
-          <p class="cover__description"></p>
-          <button class="btn cover__btn"></button>
-          
+          <h2 class="cover__title">Печатные платы</h2>
+          <p class="cover__description">
+            производство и монтаж, поставка комплектующих, блоков и модулей
+          </p>
+          <button class="btn btn--cover cover__btn">Получить бесплатную консультацию</button>
         </div>
+        <picture class="cover__picture">
+          <source type="image/webp" srcset="img/cover/cover-desktop.webp 1x, img/cover/cover-desktop@2x.webp 2x" media="(min-width: 1024px)">
+          <source type="image/webp" srcset="img/cover/cover-tablet.webp 1x, img/cover/cover-tablet@2x.webp 2x" media="(min-width: 768px)">
+          <source type="image/webp" srcset="img/cover/cover-mobile.webp 1x, img/cover/cover-mobile@2x.webp 2x">
+          <source srcset="img/cover/cover-desktop.jpg 1x, img/cover/cover-desktop@2x.jpg 2x" media="(min-width: 1024px)">
+          <source srcset="img/cover/cover-tablet.jpg 1x, img/cover/cover-tablet@2x.jpg 2x" media="(min-width: 768px)">
+          <img class="cover__img" width="1920" height="880" src="img/cover/cover-mobile.jpg" srcset="img/cover/cover-mobile@2x.jpg 2x" loading="lazy" alt="Печатная плата">
+        </picture>
       </section>
     </main>
 
