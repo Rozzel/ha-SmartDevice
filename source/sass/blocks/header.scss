@@ -16,7 +16,7 @@
   max-width: 1300px;
 
   @include vp-1023 {
-    max-width: 640px;
+    max-width: none;
   }
 
   @include vp-767 {

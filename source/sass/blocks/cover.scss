@@ -7,6 +7,14 @@
   padding-top: 305px;
   overflow: hidden;
 
+  @include vp-1023 {
+    min-height: 640px;
+  }
+
+  @include vp-767 {
+    min-height: 1260px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -56,6 +64,14 @@
   height: auto;
   z-index: 1;
   top: 0;
+
+  @include vp-1023 {
+    min-width: 1024px;
+  }
+
+  @include vp-767 {
+    min-width: 768px;
+  }
 }
 
 .cover__img {
