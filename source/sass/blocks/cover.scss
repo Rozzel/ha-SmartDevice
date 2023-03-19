@@ -8,11 +8,12 @@
   overflow: hidden;
 
   @include vp-1023 {
+    padding-top: 162px;
     min-height: 640px;
   }
 
   @include vp-767 {
-    min-height: 1260px;
+    min-height: 560px;
   }
 
   &::before {
@@ -31,6 +32,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @include vp-1023 {
+    margin: 0 30px;
+  }
+
+  @include vp-767 {
+    margin: 0;
+  }
 }
 
 .cover__title {
@@ -41,6 +50,14 @@
   z-index: 3;
   text-transform: uppercase;
   margin-bottom: 40px;
+
+  @include vp-1023 {
+    @include font($ff-roboto, 700, 64px, 75px, $color-alice-blue);
+  }
+
+  @include vp-767 {
+    @include font($ff-roboto, 700, 36px, 42px, $color-alice-blue);
+  }
 }
 
 .cover__description {
@@ -51,11 +68,27 @@
   max-width: 700px;
   margin: 0;
   margin-bottom: 40px;
+
+  @include vp-1023 {
+    @include font($ff-ptmono, 40, 22px, 34px, $color-alice-blue);
+  }
+
+  @include vp-767 {
+    @include font($ff-roboto, 400, 14px, 22px, $color-alice-blue);
+  }
 }
 
 .cover__btn {
   position: relative;
   z-index: 3;
+
+  @include vp-1023 {
+    margin-left: 45px;
+  }
+
+  @include vp-767 {
+    margin-left: 0;
+  }
 }
 
 .cover__picture {
@@ -66,16 +99,12 @@
   top: 0;
 
   @include vp-1023 {
-    min-width: 1024px;
-  }
-
-  @include vp-767 {
-    min-width: 768px;
+    min-width: 100vw;
   }
 }
 
 .cover__img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
 }

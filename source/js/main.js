@@ -48,3 +48,21 @@ window.addEventListener('DOMContentLoaded', () => {
 // breakpointChecker();
 
 // используйте .closest(el)
+
+const handleResize = (vp, id, attribute) => {
+  const breakpointMobile = vp;
+  const consultationBtn = document.getElementById(id);
+  const consultationBtnOriginalText = consultationBtn.textContent;
+  const mobileText = consultationBtn.getAttribute(attribute);
+  const text = () => {
+    if (window.innerWidth <= breakpointMobile) {
+      consultationBtn.textContent = mobileText;
+    } else {
+      consultationBtn.textContent = consultationBtnOriginalText;
+    }
+  };
+
+  return text;
+};
+
+window.addEventListener('resize', handleResize(767, 'consultation-btn', 'data-mobile-text'));

@@ -42,5 +42,9 @@
     border: none;
     border-radius: 3px;
     padding: 15px 25px;
+
+    @include vp-767 {
+      @include font($ff-robotocondensed, 700, 14px, 16px, $color-alice-blue);
+    }
   }
 }
