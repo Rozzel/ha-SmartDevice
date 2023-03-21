@@ -24,6 +24,11 @@
             "footer__logo footer__social-list"
             "footer__sections-site footer__contacts";
     }
+
+    @include vp-767 {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .footer__logo {
@@ -91,6 +96,10 @@
     &::after {
         content: "|";
         color: $color-black-pearl;
+
+        @include vp-767 {
+          content: none;
+        }
     }
 
     @include vp-1023 {

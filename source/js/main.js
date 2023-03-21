@@ -1,6 +1,6 @@
-import {iosVhFix} from './utils/ios-vh-fix';
-import {initModals} from './modules/modals/init-modals';
-import {Form} from './modules/form-validate/form';
+import { iosVhFix } from './utils/ios-vh-fix';
+import { initModals } from './modules/modals/init-modals';
+import { Form } from './modules/form-validate/form';
 
 // ---------------------------------
 
@@ -10,6 +10,9 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   iosVhFix();
+
+  handleResizeCover();
+  window.addEventListener("resize", handleResizeCover);
 
   // Modules
   // ---------------------------------
@@ -50,19 +53,35 @@ window.addEventListener('DOMContentLoaded', () => {
 // используйте .closest(el)
 
 const handleResize = (vp, id, attribute) => {
-  const breakpointMobile = vp;
-  const consultationBtn = document.getElementById(id);
-  const consultationBtnOriginalText = consultationBtn.textContent;
-  const mobileText = consultationBtn.getAttribute(attribute);
+  const breakpoint = window.matchMedia(`(max-width:${vp}px)`);
+  const btm = document.getElementById(id);
+  const btnOriginalText = btm.textContent;
+  const textAttribute = btm.getAttribute(attribute);
   const text = () => {
-    if (window.innerWidth <= breakpointMobile) {
-      consultationBtn.textContent = mobileText;
+    if (breakpoint.matches) {
+      btm.textContent = textAttribute;
     } else {
-      consultationBtn.textContent = consultationBtnOriginalText;
+      btm.textContent = btnOriginalText;
     }
   };
 
   return text;
 };
 
-window.addEventListener('resize', handleResize(767, 'consultation-btn', 'data-mobile-text'));
+const handleResizeCover = handleResize(767, 'consultation-btn', 'data-mobile-text');
+
+
+const accordions = document.querySelectorAll(".accordion__button");
+
+accordions.forEach((accordion) => {
+  accordion.addEventListener("click", () => {
+    accordion.classList.toggle("accordion__button--active");
+    const panel = accordion.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = `${panel.scrollHeight}px`;
+    }
+  });
+});
+
