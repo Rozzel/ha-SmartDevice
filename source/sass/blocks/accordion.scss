@@ -1,61 +1,50 @@
+
 .accordion {
-  position: relative;
-}
-
-.accordion__panel::before,
-.accordion__panel::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 1px;
-  border: 1px solid rgba(248, 253, 255, 0.7);
-}
-
-.accordion__panel::before {
-  top: -20px;
-  bottom: auto;
-}
-
-.accordion__panel::after {
-  top: auto;
-  bottom: 0;
-
+  @include vp-767 {
+    border-bottom: 1px solid $border-alice-blue;
+  }
 }
 
 .accordion__button {
   @include vp-767 {
+    padding-top: 20px;
+    position: relative;
     cursor: pointer;
-    transition: 0.4s;
+    width: 100%;
+    border-top: 1px solid $border-alice-blue;
+  }
+}
 
-    &:hover {
-      background-color: #ccc;
-    }
+.accordion__button::after {
+  @include vp-767 {
+    content: "+";
+    position: absolute;
+    right: 20px;
+  }
+}
 
-    &::after {
-      content: "+";
-      font-size: 13px;
-      float: right;
-      margin-left: 5px;
-    }
+.accordion__button--active::after {
+  @include vp-767 {
+    content: "-";
+  }
+}
 
-    &--active {
-      background-color: #ccc;
-
-      ::after {
-        content: "-";
-      }
-    }
+.accordion__button:hover {
+  @include vp-767 {
+    background-color: #ccc;
   }
 }
 
 .accordion__panel {
   @include vp-767 {
-    padding: 0 18px;
-    background-color: red;
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+  }
+}
+
+.accordion__button--active + .accordion__panel {
+  @include vp-767 {
+    margin-bottom: 20px;
   }
 }

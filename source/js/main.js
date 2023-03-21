@@ -70,9 +70,7 @@ const handleResize = (vp, id, attribute) => {
 
 const handleResizeCover = handleResize(767, 'consultation-btn', 'data-mobile-text');
 
-
 const accordions = document.querySelectorAll(".accordion__button");
-
 accordions.forEach((accordion) => {
   accordion.addEventListener("click", () => {
     accordion.classList.toggle("accordion__button--active");
@@ -84,4 +82,3 @@ accordions.forEach((accordion) => {
     }
   });
 });
-
