@@ -23,13 +23,12 @@
   padding: 40px 45px 35px 45px;
 }
 
-.advantages__item svg {
+.advantages__icon {
   fill: $color-deepsky-blue;
 }
 
 .advantages__heading {
   @include font($ff-robotocondensed, 400, 24px, 33px, $color-deepsky-blue);
-
 }
 
 .advantages__description {
