@@ -1,6 +1,11 @@
 .advantages {
   padding-top: 120px;
   padding-bottom: 120px;
+
+  @include vp-767 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .advantages__container {
@@ -9,28 +14,77 @@
 }
 
 .advantages__list {
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, 595px);
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(min-content, 595px));
   gap: 32px;
 
   list-style-type: none;
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+    max-width: 340px;
+  }
 }
 
 .advantages__item {
+  position: relative;
   border: 1px solid $color-whisper;
-  border-left: 5px solid $color-deepsky-blue;
   padding: 40px 45px 35px 45px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: $color-deepsky-blue;
+  }
+
+  &:hover {
+    background-color: $color-deepsky-blue;
+    border: 1px solid $color-deepsky-blue;
+  }
+
+  @include vp-767 {
+    padding: 30px 30px 35px 30px;
+  }
 }
 
 .advantages__icon {
   fill: $color-deepsky-blue;
+  margin-bottom: 20px;
+}
+
+.advantages__item:hover .advantages__icon {
+  fill: $color-alice-blue;
 }
 
 .advantages__heading {
   @include font($ff-robotocondensed, 400, 24px, 33px, $color-deepsky-blue);
+  margin: 0;
+  margin-bottom: 15px;
+
+  @include vp-767 {
+    @include font($ff-robotocondensed, 400, 20px, 28px, $color-deepsky-blue);
+  }
 }
 
 .advantages__description {
   @include font($ff-ptmono, 400, 16px, 22px, $color-black-pearl);
+  min-height: 120px;
+  margin: 0;
+
+  @include vp-767 {
+    @include font($ff-ptmono, 400, 14px, 19px, $color-black-pearl);
+  }
+}
+
+.advantages__item:hover .advantages__heading,
+.advantages__item:hover .advantages__description {
+  color: $color-alice-blue;
 }
