@@ -64,7 +64,8 @@
         </picture>
       </section>
 
-      <section class="advantages">
+      <!-- //FIXME visually-hidden-->
+      <section class="advantages visually-hidden">
         <div class="container advantages__container">
           <h2 class="visually-hidden">Наши преимущества</h2>
           <ul class="advantages__list">
@@ -110,10 +111,27 @@
           </ul>
         </div>
       </section>
+
+      <section class="company">
+        <div class="container company__container">
+          <h2 class="company__heading">О компании</h2>
+          <p class="company__description">
+            Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
+          </p>
+          <p class="company__description">
+            Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.
+          </p>
+          <a class="btn btn--skeleton-deepsky company__btn" href="#">Подробнее</a>
+          <picture class="company__picture">
+            <source type="image/webp" srcset="img/company/company-2022.webp, img/company/company-2022@2x.webp 2x">
+            <img class="company__image" width="150" height="320" src="img/company/company-2022.png" srcset="img/company/company-2022@2x.png 2x" loading="lazy" alt="Smart Device 2022">
+          </picture>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-      <div class="container container__footer">
+      <div class="container footer__container">
         <a class="footer__logo">
           <svg width="55" height="55" viewBox="0 0 55 55" aria-label="Логотип Smart Device">
             <use xlink:href="img/sprite.svg#logo"></use>

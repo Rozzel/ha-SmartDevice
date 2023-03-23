@@ -1,0 +1,67 @@
+.company {
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+.company__container {
+  display: grid;
+  grid-template-columns: min-content minmax(min-content, 970px);
+  grid-template-rows: min-content;
+  column-gap: 100px;
+  justify-content: center;
+  justify-items: start;
+
+  @include vp-1023 {
+    column-gap: 30px;
+  }
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    gap: 0;
+  }
+}
+
+.company__heading {
+  @include font($ff-robotocondensed, 400, 36px, 50px, $color-black-pearl);
+  grid-column: 2 / 2;
+  order: 2;
+  margin: 0;
+  margin-bottom: 15px;
+
+  @include vp-767 {
+    @include font($ff-robotocondensed, 400, 28px, 40px, $color-black-pearl);
+  }
+}
+
+.company__description {
+  @include font($ff-ptmono, 400, 16px, 22px, $color-black-pearl);
+  grid-column: 2 / 2;
+  order: 2;
+  margin: 0;
+  margin-bottom: 20px;
+
+  @include vp-767 {
+    @include font($ff-ptmono, 400, 14px, 19px, $color-black-pearl);
+  }
+}
+
+.company__btn {
+  grid-column: 2 / 2;
+  order: 2;
+}
+
+.company__picture {
+  justify-self: right;
+  grid-row: 1 / span 5;
+  order: 1;
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.company__image {
+  min-width: 150px;
+}

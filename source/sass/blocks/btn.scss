@@ -34,6 +34,16 @@
     padding: 10px 15px;
   }
 
+  &--skeleton-deepsky {
+    @include font($ff-robotocondensed, 700, 14px, 16px, $color-deepsky-blue);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid $color-deepsky-blue;
+    border-radius: 3px;
+    padding: 15px 25px;
+  }
+
   &--cover {
     @include font($ff-robotocondensed, 700, 18px, 21px, $color-alice-blue);
     letter-spacing: 0.05em;
