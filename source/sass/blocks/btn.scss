@@ -57,4 +57,12 @@
       @include font($ff-robotocondensed, 700, 14px, 16px, $color-alice-blue);
     }
   }
+
+  &--feedback {
+    @include font($ff-robotocondensed, 700, 16px, 19px, $color-default-white);
+    letter-spacing: 0.05em;
+    text-transform: uppercases;
+    padding: 15px 70px;
+    background-color: $color-black-pearl;
+  }
 }

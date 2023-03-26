@@ -136,7 +136,7 @@
           <div class="products__list">
             <a class="products__item" href="#">
               <p class="products__item-name">Производство<br>печатных плат</p>
-              <picture class="products__picture">
+              <picture>
                 <source type="image/webp" srcset="img/products/products-production-desktop.webp 1x, img/products/products-production-desktop@2x.webp 2x" media="(min-width: 1024px)">
                 <source type="image/webp" srcset="img/products/products-production-tablet.webp 1x, img/products/products-production-tablet@2x.webp 2x" media="(min-width: 768px)">
                 <source type="image/webp" srcset="img/products/products-production-mobile.webp 1x, img/products/products-production-mobile@2x.webp 2x">
@@ -175,13 +175,25 @@
 
       <section class="feedback">
         <div class="container feedback__container">
+          <h1 class="feedback__title">Остались вопросы? Задайте&nbsp;их&nbsp;нам!</h1>
+          <p class="feedback__subtitle">Мы проконсультируем Вас бесплатно</p>
+          <form class="feedback__form">
+            <input type="text" name="feedback-name" class="feedback__input" placeholder="Имя">
+            <input type="tel" name="feedback-phone" required class="feedback__input" placeholder="Телефон">
+            <textarea class="feedback__input feedback__input-textarea" name="feedback-message" placeholder="Ваш вопрос"></textarea>
+
+            <button type="submit" class="btn btn--feedback feedback__button">Задать вопрос</button>
+
+            <fieldset class="feedback__checkbox-group">
+              <input type="checkbox" id="feedback-agreement" name="agreement" required class="feedback__checkbox">
+              <label for="feedback-agreement" class="feedback__checkbox-label">Я согласен на обработку персональных данных</label>
+            </fieldset>
+          </form>
           <picture class="feedback__picture">
-            <!-- //TODO -->
             <source type="image/webp" srcset="img/feedback/feedback-paperairplane.webp, img/feedback/feedback-paperairplane@2x.webp 2x">
-            <img class="feedback__image" width="510" height="285" src="img/feedback/feedback-paperairplane.png" srcset="img/feedback/feedback-paperairplane@2x.png 2x" loading="lazy" alt="Изображение бумажного самолёта">
+            <img width="510" height="285" src="img/feedback/feedback-paperairplane.png" srcset="img/feedback/feedback-paperairplane@2x.png 2x" loading="lazy" alt="Изображение бумажного самолёта">
           </picture>
         </div>
-
       </section>
     </main>
 
