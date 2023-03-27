@@ -1,0 +1,10 @@
+{
+  "name": "Smart Device умные технологии",
+  "short_name": "Smart Device",
+  "description": "Надежный партнер в области умных технологий, производства и монтажа электронных компонентов.",
+  "theme_color": "#00b2ff",
+  "icons": [
+    { "src": "img/favicons/192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "img/favicons/512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
