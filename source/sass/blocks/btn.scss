@@ -62,7 +62,8 @@
     @include font($ff-robotocondensed, 700, 16px, 19px, $color-default-white);
     letter-spacing: 0.05em;
     text-transform: uppercases;
-    padding: 15px 70px;
+    text-align: center;
+    padding: 15px 25px;
     background-color: $color-black-pearl;
   }
 }

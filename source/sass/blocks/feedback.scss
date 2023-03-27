@@ -7,12 +7,29 @@
   min-height: 840px;
   padding-top: 170px;
   padding-bottom: 250px;
+
+  @include vp-1023 {
+    background-image: none;
+    padding-top: 50px;
+    padding-bottom: 125px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 90px;
+  }
 }
 
 .feedback__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 120px;
+
+  @include vp-1023 {
+    display: flex;
+    flex-direction: column;
+    max-width: 670px;
+  }
+
 }
 
 .feedback__title {
@@ -21,6 +38,10 @@
   grid-column: 2;
   margin: 0;
   margin-bottom: 15px;
+
+  @include vp-767 {
+    @include font($ff-robotocondensed, 400, 30px, 42px, $color-default-white);
+  }
 }
 
 .feedback__subtitle {
@@ -29,6 +50,10 @@
   grid-column: 2;
   margin: 0;
   margin-bottom: 35px;
+
+  @include vp-767 {
+    @include font($ff-ptmono, 400, 14px, 19px, $color-default-white);
+  }
 }
 
 .feedback__form {
@@ -36,11 +61,21 @@
   max-width: 585px;
   grid-template-columns: repeat(2, 275px);
   align-items: start;
-  justify-items: start;
   column-gap: 30px;
   row-gap: 20px;
   order: 2;
   grid-column: 2;
+
+  @include vp-1023 {
+    max-width: none;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 .feedback__input,
@@ -63,6 +98,8 @@
 
 .feedback__button {
   margin-top: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .feedback__checkbox-group {
