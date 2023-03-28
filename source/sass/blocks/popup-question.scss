@@ -1,0 +1,85 @@
+.popup-question__content {}
+
+.popup-question__title {
+  @include font($ff-robotocondensed, 400, 36px, 51px, $color-default-white);
+}
+
+.popup-question__subtitle {
+  @include font($ff-ptmono, 400, 16px, 22px, $color-default-white);
+}
+
+.popup-question__form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+// TODO
+.popup-question__input,
+.popup-question__input::placeholder {
+  @include font($ff-ptmono, 400, 16px, 22px, $color-default-white);
+}
+
+.popup-question__input {
+  width: 100%;
+  background-color: $color-transparent-blackpearl;
+  border: none;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+.popup-question__input-textarea {
+  min-height: 155px;
+}
+
+.popup-question__button {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.popup-question__checkbox-group {
+  margin: 0;
+  padding: 0;
+  margin-top: auto;
+  border: none;
+}
+
+.popup-question__checkbox {
+  display: none;
+}
+
+.popup-question__checkbox-label {
+  @include font($ff-ptmono, 400, 14px, 16px, $color-default-white);
+  opacity: 80%;
+  display: inline-block;
+  position: relative;
+  margin-left: 26px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border: 1px solid $color-default-white;
+    border-radius: 2px;
+  }
+}
+
+.popup-question__checkbox:checked + .popup-question__checkbox-label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -21px;
+  width: 9px;
+  height: 6px;
+  background-image: url("../img/svg/check-mark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+}
+
+.popup-question__close-btn {}
