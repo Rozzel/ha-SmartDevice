@@ -9,6 +9,7 @@
   padding-bottom: 250px;
 
   @include vp-1023 {
+    min-height: auto;
     background-image: none;
     padding-top: 50px;
     padding-bottom: 125px;
@@ -28,6 +29,7 @@
     display: flex;
     flex-direction: column;
     max-width: 670px;
+    flex-shrink: 1;
   }
 }
 
@@ -93,6 +95,10 @@
 .feedback__input-textarea {
   grid-column: 2 span;
   min-height: 155px;
+
+  @include vp-767 {
+    min-height: 180px;
+  }
 }
 
 .feedback__button {
