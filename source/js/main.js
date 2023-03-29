@@ -86,3 +86,18 @@ accordions.forEach((accordion) => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const smoothScrollButtons = document.querySelectorAll('.smooth-scroll');
+
+  smoothScrollButtons.forEach((button) => {
+    button.addEventListener('click', function (event) {
+      const targetId = event.currentTarget.getAttribute('data-target');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({behavior: 'smooth'});
+      }
+    });
+  });
+});
