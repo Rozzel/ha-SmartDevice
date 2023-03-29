@@ -1,11 +1,17 @@
-.popup-question__content {}
+.popup-question {
+  background-color: $color-deepsky-blue;
+}
 
 .popup-question__title {
-  @include font($ff-robotocondensed, 400, 36px, 51px, $color-default-white);
+  @include font($ff-robotocondensed, 400, 30px, 42px, $color-default-white);
+  margin: 0;
+  margin-bottom: 15px;
 }
 
 .popup-question__subtitle {
   @include font($ff-ptmono, 400, 16px, 22px, $color-default-white);
+  margin: 0;
+  margin-bottom: 40px;
 }
 
 .popup-question__form {
@@ -13,7 +19,7 @@
   flex-direction: column;
   align-items: stretch;
 }
-// TODO
+
 .popup-question__input,
 .popup-question__input::placeholder {
   @include font($ff-ptmono, 400, 16px, 22px, $color-default-white);
@@ -25,16 +31,19 @@
   border: none;
   border-radius: 3px;
   padding: 15px;
-}
+  margin-bottom: 20px;
 
-.popup-question__input-textarea {
-  min-height: 155px;
+  &--textarea {
+    min-height: 155px;
+    margin-bottom: 25px;
+  }
 }
 
 .popup-question__button {
   margin-top: auto;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .popup-question__checkbox-group {
@@ -81,5 +90,3 @@
   background-size: contain;
   transform: translate(-50%, -50%);
 }
-
-.popup-question__close-btn {}
