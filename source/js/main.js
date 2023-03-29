@@ -17,6 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
   smoothScroll('.smooth-scroll');
 
   initializeAccordion('.accordion__button', 'accordion__button--active');
+
+  initializeMoreTextToggle('[data-toggle="more-text"]', '.company__description--hidden');
   // Modules
   // ---------------------------------
 
@@ -98,6 +100,24 @@ const initializeAccordion = (buttonSelector, active) => {
         panel.style.maxHeight = null;
       } else {
         panel.style.maxHeight = `${panel.scrollHeight}px`;
+      }
+    });
+  });
+};
+
+const initializeMoreTextToggle = (buttonSelector, hiddenContentSelector) => {
+  const moreTextButton = document.querySelector(buttonSelector);
+  const hiddenContents = document.querySelectorAll(hiddenContentSelector);
+
+  moreTextButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    hiddenContents.forEach((content) => {
+      content.classList.toggle('company__description--hidden');
+
+      if (content.classList.contains('company__description--hidden')) {
+        moreTextButton.textContent = 'Подробнее';
+      } else {
+        moreTextButton.textContent = 'Свернуть';
       }
     });
   });
