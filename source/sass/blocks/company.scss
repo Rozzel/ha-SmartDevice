@@ -42,6 +42,10 @@
   margin: 0;
   margin-bottom: 20px;
 
+  &--hidden {
+    display: none;
+  }
+
   @include vp-767 {
     @include font($ff-ptmono, 400, 14px, 19px, $color-black-pearl);
   }

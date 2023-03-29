@@ -11,12 +11,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
   iosVhFix();
 
-  handleResizeCover();
-  window.addEventListener('resize', handleResizeCover);
+  handleResize(767, 'consultation-btn', 'data-mobile-text');
+  handleResize(767, 'products-title', 'data-mobile-text');
 
-  handleResizeProducts();
-  window.addEventListener('resize', handleResizeProducts);
+  smoothScroll('.smooth-scroll');
 
+  initializeAccordion('.accordion__button', 'accordion__button--active');
   // Modules
   // ---------------------------------
 
@@ -68,27 +68,11 @@ const handleResize = (vp, id, attribute) => {
     }
   };
 
-  return text;
+  window.addEventListener('resize', text);
 };
 
-const handleResizeCover = handleResize(767, 'consultation-btn', 'data-mobile-text');
-const handleResizeProducts = handleResize(767, 'products-title', 'data-mobile-text');
-
-const accordions = document.querySelectorAll('.accordion__button');
-accordions.forEach((accordion) => {
-  accordion.addEventListener('click', () => {
-    accordion.classList.toggle('accordion__button--active');
-    const panel = accordion.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = `${panel.scrollHeight}px`;
-    }
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const smoothScrollButtons = document.querySelectorAll('.smooth-scroll');
+const smoothScroll = (selector) => {
+  const smoothScrollButtons = document.querySelectorAll(selector);
 
   smoothScrollButtons.forEach((button) => {
     button.addEventListener('click', function (event) {
@@ -100,4 +84,21 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-});
+};
+
+const initializeAccordion = (buttonSelector, active) => {
+  const accordionButtons = document.querySelectorAll(buttonSelector);
+
+  accordionButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      button.classList.toggle(active);
+      const panel = button.nextElementSibling;
+
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = `${panel.scrollHeight}px`;
+      }
+    });
+  });
+};
