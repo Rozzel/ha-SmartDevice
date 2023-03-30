@@ -42,8 +42,17 @@
   margin: 0;
   margin-bottom: 20px;
 
+  &--visible {
+    max-height: 1000px;
+    opacity: 1;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
   &--hidden {
-    display: none;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    overflow: hidden;
   }
 
   @include vp-767 {

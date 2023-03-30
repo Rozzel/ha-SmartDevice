@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initializeAccordion('.accordion__button', 'accordion__button--active');
 
-  initializeMoreTextToggle('[data-toggle="more-text"]', '.company__description--hidden');
+  initializeMoreTextToggle('[data-toggle="more-text"]', 'company__description--hidden', 'company__description--visible');
   // Modules
   // ---------------------------------
 
@@ -88,12 +88,21 @@ const smoothScroll = (selector) => {
   });
 };
 
-const initializeAccordion = (buttonSelector, active) => {
+const initializeAccordion = (buttonSelector, buttonActive) => {
   const accordionButtons = document.querySelectorAll(buttonSelector);
 
   accordionButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      button.classList.toggle(active);
+      accordionButtons.forEach((otherButton) => {
+        if (otherButton !== button) {
+          otherButton.classList.remove(buttonActive);
+          const otherPanel = otherButton.nextElementSibling;
+          otherPanel.style.maxHeight = null;
+        }
+      });
+
+      button.classList.toggle(buttonActive);
+
       const panel = button.nextElementSibling;
 
       if (panel.style.maxHeight) {
@@ -105,19 +114,21 @@ const initializeAccordion = (buttonSelector, active) => {
   });
 };
 
-const initializeMoreTextToggle = (buttonSelector, hiddenContentSelector) => {
+const initializeMoreTextToggle = (buttonSelector, hiddenContentSelector, visibleContentSelector) => {
   const moreTextButton = document.querySelector(buttonSelector);
-  const hiddenContents = document.querySelectorAll(hiddenContentSelector);
+  const hiddenContents = document.querySelectorAll(`.${hiddenContentSelector}`);
 
   moreTextButton.addEventListener('click', (event) => {
     event.preventDefault();
     hiddenContents.forEach((content) => {
-      content.classList.toggle('company__description--hidden');
-
-      if (content.classList.contains('company__description--hidden')) {
-        moreTextButton.textContent = 'Подробнее';
-      } else {
+      if (content.classList.contains(hiddenContentSelector)) {
+        content.classList.remove(hiddenContentSelector);
+        content.classList.add(visibleContentSelector);
         moreTextButton.textContent = 'Свернуть';
+      } else {
+        content.classList.remove(visibleContentSelector);
+        content.classList.add(hiddenContentSelector);
+        moreTextButton.textContent = 'Подробнее';
       }
     });
   });
