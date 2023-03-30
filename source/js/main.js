@@ -23,6 +23,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initPhoneInput(document.querySelector('.popup-question__form'));
   initPhoneInput(document.querySelector('.feedback__form'));
+
+  focusFormName('.header__btn', 'input[name="popup-name"]');
+  focusFormName('.cover__btn', 'input[name="feedback-name"]');
   // Modules
   // ---------------------------------
 
@@ -134,6 +137,19 @@ const initializeMoreTextToggle = (buttonSelector, hiddenContentSelector, visible
         content.classList.add(hiddenContentSelector);
         moreTextButton.textContent = 'Подробнее';
       }
+    });
+  });
+};
+
+const focusFormName = (buttonSelector, inputSelector) => {
+  const openModalButtons = document.querySelectorAll(buttonSelector);
+  const inputElement = document.querySelector(inputSelector);
+
+  openModalButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      setTimeout(() => {
+        inputElement.focus();
+      }, 1000);
     });
   });
 };
