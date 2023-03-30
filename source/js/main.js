@@ -1,6 +1,7 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
+import {initPhoneInput} from './modules/form-validate/init-phone-input';
 
 // ---------------------------------
 
@@ -19,6 +20,9 @@ window.addEventListener('DOMContentLoaded', () => {
   initializeAccordion('.accordion__button', 'accordion__button--active');
 
   initializeMoreTextToggle('[data-toggle="more-text"]', 'company__description--hidden', 'company__description--visible');
+
+  initPhoneInput(document.querySelector('.popup-question__form'));
+  initPhoneInput(document.querySelector('.feedback__form'));
   // Modules
   // ---------------------------------
 

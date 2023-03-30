@@ -201,14 +201,14 @@
           <h1 class="feedback__title">Остались вопросы? Задайте их&nbsp;нам!</h1>
           <p class="feedback__subtitle">Мы проконсультируем Вас бесплатно</p>
           <form class="feedback__form" action="https://echo.htmlacademy.ru/" method="POST">
-            <input type="text" name="feedback-name" class="feedback__input" placeholder="Имя">
-            <input type="tel" name="feedback-phone" required class="feedback__input" placeholder="Телефон">
+            <input type="text" name="feedback-name" class="feedback__input" placeholder="Имя" required>
+            <input type="tel" name="feedback-phone" class="feedback__input" placeholder="Телефон" required>
             <textarea class="feedback__input feedback__input-textarea" name="feedback-message" placeholder="Ваш вопрос"></textarea>
 
             <button type="submit" class="btn btn--feedback feedback__button">Задать&nbsp;вопрос</button>
 
             <fieldset class="feedback__checkbox-group">
-              <input type="checkbox" id="feedback-agreement" name="agreement" required class="feedback__checkbox">
+              <input type="checkbox" id="feedback-agreement" name="agreement" class="feedback__checkbox" required>
               <label for="feedback-agreement" class="feedback__checkbox-label">Я согласен на обработку персональных данных</label>
             </fieldset>
           </form>
@@ -289,13 +289,13 @@
           Оставьте контакты, мы проконсультируем вас бесплатно в удобное время
         </p>
         <form class="popup-question__form" action="https://echo.htmlacademy.ru/" method="POST">
-          <input type="text" name="feedback-name" class="popup-question__input" placeholder="Имя">
-          <input type="tel" name="feedback-phone" required class="popup-question__input" placeholder="Телефон">
+          <input type="text" name="feedback-name" class="popup-question__input" placeholder="Имя" required>
+          <input type="tel" name="feedback-phone" class="popup-question__input" placeholder="Телефон" required>
           <textarea class="popup-question__input popup-question__input--textarea" name="feedback-message" placeholder="Ваш вопрос"></textarea>
           <button type="submit" class="btn btn--feedback popup-question__button">Задать&nbsp;вопрос</button>
 
           <fieldset class="popup-question__checkbox-group">
-            <input type="checkbox" id="popup-question-agreement" name="agreement" required class="popup-question__checkbox">
+            <input type="checkbox" id="popup-question-agreement" name="agreement" class="popup-question__checkbox" required>
             <label for="popup-question-agreement" class="popup-question__checkbox-label">Я согласен на обработку персональных данных</label>
           </fieldset>
         </form>
