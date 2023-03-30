@@ -1,19 +1,61 @@
-// @font-face {
-//   font-style: normal;
-//   font-weight: 400;
-//   font-family: "Rouble";
-
-//   font-display: swap;
-//   src:
-//     url("../fonts/rouble.woff2") format("woff2");
-// }
-
-@font-face {
-  font-style: normal;
-  font-weight: 400;
-  font-family: "";
-
-  font-display: swap;
-  src:
-    url("../fonts/.woff2") format("woff2");
-}
+@include font-face(
+  "Rouble",
+  rouble,
+  400,
+);
+@include font-face(
+  "Roboto",
+  roboto-medium500-cyrillicext,
+  500,
+  normal,
+  "U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+);
+@include font-face(
+  "Roboto",
+  roboto-medium500-latinext,
+  500,
+  normal,
+  "U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF"
+);
+@include font-face(
+  "Roboto Condensed",
+  robotocondensed-regular400-cyrillicext,
+  400,
+  normal,
+  "U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+);
+@include font-face(
+  "Roboto Condensed",
+  robotocondensed-regular400-latinext,
+  400,
+  normal,
+  "U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF"
+);
+@include font-face(
+  "Roboto Condensed",
+  robotocondensed-bold700-cyrillicext,
+  700,
+  normal,
+  "U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+);
+@include font-face(
+  "Roboto Condensed",
+  robotocondensed-bold700-latinext,
+  700,
+  normal,
+  "U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF"
+);
+@include font-face(
+  "PT Mono",
+  ptmono-regular400-cyrillicext,
+  400,
+  normal,
+  "U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+);
+@include font-face(
+  "PT Mono",
+  ptmono-regular400-latinext,
+  400,
+  normal,
+  "U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF"
+);

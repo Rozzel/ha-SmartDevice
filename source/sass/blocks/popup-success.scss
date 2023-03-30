@@ -1,0 +1,7 @@
+.popup-success {
+  background-color: $color-deepsky-blue;
+}
+
+.popup-success__description {
+  @include font($ff-robotocondensed, 400, 30px, 42px, $color-default-white);
+}

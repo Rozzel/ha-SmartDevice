@@ -1,0 +1,73 @@
+.accordion {
+  @include vp-767 {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 9px;
+      width: 100vw;
+      height: 1px;
+      left: -16px;
+      border-bottom: 1px solid $border-alice-blue;
+    }
+  }
+}
+
+.accordion__button {
+  @include vp-767 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      width: 100vw;
+      height: 1px;
+      left: -16px;
+      border-top: 1px solid $border-alice-blue;
+      transition: transform 0.1s ease-in-out;
+    }
+
+    &::after {
+      content: "";
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      right: 20px;
+      background-image: url("../img/svg/plus-symbol.svg");
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &--active {
+      padding-bottom: 0;
+    }
+
+    &--active::after {
+      background-image: url("../img/svg/minus-symbol.svg");
+    }
+
+    &--active:hover::after {
+      background-image: url("../img/svg/plus-symbol.svg");
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.accordion__panel {
+  @include vp-767 {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+  }
+}
+
+.accordion__button--active + .accordion__panel {
+  @include vp-767 {
+    margin-bottom: 20px;
+  }
+}
