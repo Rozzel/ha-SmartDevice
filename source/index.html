@@ -34,13 +34,14 @@
     <header class="header">
       <div class="container header__container">
         <a class="header__logo">
-          <svg width="55" height="55" viewBox="0 0 55 55" aria-label="Логотип Smart Device">
-            <use xlink:href="img/sprite.svg#logo"></use>
-          </svg>
-          <div class="header__logo-text">
-            <p class="header__logo-name">Smart Device</p>
-            <p class="header__logo-slogan">умные технологии</p>
-          </div>
+          <picture>
+            <source media="(min-width: 768px)" srcset="img/sprite.svg#logo-desktop-tablet">
+            <source media="(max-width: 767px)" srcset="img/sprite.svg#logo-mobile">
+            <img src="img/sprite.svg#logo-desktop-tablet"
+                 alt="Логотип компании: Smart Device (умные технологии)"
+                 width="115" height="55"
+                 sizes="(max-width: 767px) 35px, 35px">
+          </picture>
         </a>
 
         <div class="header__contacts">
