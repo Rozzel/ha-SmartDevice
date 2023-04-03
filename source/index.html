@@ -201,8 +201,8 @@
           <h1 class="feedback__title">Остались вопросы? Задайте их&nbsp;нам!</h1>
           <p class="feedback__subtitle">Мы проконсультируем Вас бесплатно</p>
           <form class="feedback__form" action="https://echo.htmlacademy.ru/" method="POST">
-            <input type="text" name="feedback-name" class="feedback__input" placeholder="Имя" required>
-            <input type="tel" name="feedback-phone" class="feedback__input" placeholder="Телефон" required>
+            <input type="text" name="feedback-name" class="feedback__input" placeholder="Имя" aria-label="Введите ваше имя" required>
+            <input type="tel" name="feedback-phone" class="feedback__input" placeholder="Телефон" aria-label="Введите ваш телефон" required>
             <textarea class="feedback__input feedback__input-textarea" name="feedback-message" placeholder="Ваш вопрос"></textarea>
 
             <button type="submit" class="btn btn--feedback feedback__button">Задать&nbsp;вопрос</button>
@@ -289,8 +289,8 @@
           Оставьте контакты, мы проконсультируем вас бесплатно в удобное время
         </p>
         <form class="popup-question__form" action="https://echo.htmlacademy.ru/" method="POST">
-          <input type="text" name="feedback-name" class="popup-question__input" placeholder="Имя" required>
-          <input type="tel" name="feedback-phone" class="popup-question__input" placeholder="Телефон" required>
+          <input type="text" name="feedback-name" class="popup-question__input" placeholder="Имя" aria-label="Введите ваше имя" required>
+          <input type="tel" name="feedback-phone" class="popup-question__input" placeholder="Телефон" aria-label="Введите ваш телефон" required>
           <textarea class="popup-question__input popup-question__input--textarea" name="feedback-message" placeholder="Ваш вопрос"></textarea>
           <button type="submit" class="btn btn--feedback popup-question__button">Задать&nbsp;вопрос</button>
 
