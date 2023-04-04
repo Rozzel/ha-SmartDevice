@@ -67,17 +67,20 @@ window.addEventListener('DOMContentLoaded', () => {
 const handleResize = (vp, id, attribute) => {
   const breakpoint = window.matchMedia(`(max-width:${vp}px)`);
   const btm = document.getElementById(id);
-  const btnOriginalText = btm.textContent;
-  const textAttribute = btm.getAttribute(attribute);
-  const text = () => {
-    if (breakpoint.matches) {
-      btm.textContent = textAttribute;
-    } else {
-      btm.textContent = btnOriginalText;
-    }
-  };
 
-  window.addEventListener('resize', text);
+  if (btm) {
+    const btnOriginalText = btm.textContent;
+    const textAttribute = btm.getAttribute(attribute);
+    const text = () => {
+      if (breakpoint.matches) {
+        btm.textContent = textAttribute;
+      } else {
+        btm.textContent = btnOriginalText;
+      }
+    };
+
+    window.addEventListener('resize', text);
+  }
 };
 
 const smoothScroll = (selector) => {
