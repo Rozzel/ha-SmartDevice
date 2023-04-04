@@ -8,7 +8,12 @@
   z-index: 10;
 
   @include vp-1023 {
+    min-height: 100px;
     position: absolute;
+  }
+
+  @include vp-767 {
+    min-height: 70px;
   }
 }
 
@@ -32,28 +37,16 @@
 .header__logo {
   display: flex;
   flex-direction: row;
-  gap: 15px;
 }
 
-.header__logo-text {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  justify-content: center;
+.header__logo-img {
+  width: 215px;
+  height: 55px;
 
   @include vp-767 {
-    display: none;
+    width: 35px;
+    height: 35px;
   }
-}
-
-.header__logo-name {
-  @include font($ff-robotocondensed, 700, 25px, 29px, $color-alice-blue);
-  margin: 0;
-}
-
-.header__logo-slogan {
-  @include font($ff-roboto, 500, 12px, 14px, $color-transparent-white);
-  margin: 0;
 }
 
 .header__contacts {

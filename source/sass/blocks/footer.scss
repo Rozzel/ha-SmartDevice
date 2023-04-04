@@ -45,24 +45,6 @@
   }
 }
 
-.footer__logo-text {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  justify-content: center;
-}
-
-.footer__logo-name {
-  @include font($ff-robotocondensed, 700, 25px, 29px, $color-alice-blue);
-  margin: 0;
-  margin-top: 10px;
-}
-
-.footer__logo-slogan {
-  @include font($ff-roboto, 500, 12px, 14px, $color-transparent-white);
-  margin: 0;
-}
-
 .footer__social-list {
   grid-area: footer__social-list;
   display: flex;
