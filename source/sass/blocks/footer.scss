@@ -9,7 +9,8 @@
   display: grid;
   column-gap: 30px;
   row-gap: 35px;
-  grid-template-columns: 345px 470px 1fr;
+  // grid-template-columns: 345px 470px 1fr;
+  grid-template-columns: minmax(1fr, 345px) minmax(1fr, 470px) minmax(1fr, 345px);
   grid-template-rows: min-content 1fr;
   grid-template-areas:
     "footer__logo footer__sections-site footer__contacts"
