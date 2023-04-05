@@ -32,26 +32,38 @@
 
 .products__list {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 85px;
+  gap: 30px;
 
   @include vp-1023 {
-    gap: 30px;
+    // gap: 30px;
   }
+
+  // 1191
 }
 
 .products__item {
   position: relative;
 
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: $color-transparent-blackpearlstrong;
+  }
+
   &::after {
     content: "";
+    position: absolute;
+    z-index: 2;
     width: 60px;
     height: 60px;
     background-color: $color-deepsky-blue;
     right: 0;
     bottom: 0;
-    position: absolute;
     border-top-left-radius: 3px;
     background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNSIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDUgMTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAuNDc2MTk2IDguODA5NTdMNC4yODU3MiA1LjAwMDA1TDAuNDc2MTk2IDEuMTkwNTIiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=");
     background-position: center;
@@ -62,6 +74,7 @@
 .products__item-name {
   @include font($ff-robotocondensed, 400, 20px, 30px, $color-default-white);
   position: absolute;
+  z-index: 2;
   margin: 0;
   top: 50px;
   left: 40px;
@@ -75,6 +88,10 @@
     top: 30px;
     left: 30px;
   }
+}
+
+.products__picture {
+  position: relative;
 }
 
 .products__img {

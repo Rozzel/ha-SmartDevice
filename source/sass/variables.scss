@@ -3,32 +3,33 @@
 
 // Default
 
-$color-default-black:               #000000;
-$color-default-white:               #ffffff;
-$color-transparent:                 rgba(255, 255, 255, 0);
+$color-default-black:                 #000000;
+$color-default-white:                 #ffffff;
+$color-transparent:                   rgba(255, 255, 255, 0);
 
 // Project palette
 
-$color-neon-blue:                   #2c39f2;
-$color-torch-red:                   #ff1553;
+$color-neon-blue:                     #2c39f2;
+$color-torch-red:                     #ff1553;
 
-$color-deepsky-blue:                #00b2ff;
-$color-alice-blue:                  #f2f5f7;
-$color-black-pearl:                 #041427;
-$color-whisper:                     #ebebeb;
-$color-transparent-white:           rgba(255, 255, 255, 0.7);
-$color-transparent-blackpearl:      rgba(4, 20, 39, 0.15);
+$color-deepsky-blue:                  #00b2ff;
+$color-alice-blue:                    #f2f5f7;
+$color-black-pearl:                   #041427;
+$color-whisper:                       #ebebeb;
+$color-transparent-white:             rgba(255, 255, 255, 0.7);
+$color-transparent-blackpearl:        rgba(4, 20, 39, 0.15);
+$color-transparent-blackpearlstrong:  rgba(4, 24, 39, 0.5);
 
 // Gradient
 
-$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
-$black-to-bottom:                   linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
-$black-to-bottom:                   linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
-$gradient-background-cover:         linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%);
+$black-to-right:                      linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$black-to-bottom:                     linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+$black-to-bottom:                     linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+$gradient-background-cover:           linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%);
 
 // Border Colors
 
-$border-alice-blue:                 rgba(248, 253, 255, 0.7);
+$border-alice-blue:                   rgba(248, 253, 255, 0.7);
 
 // Typography
 // ---------------------------------
