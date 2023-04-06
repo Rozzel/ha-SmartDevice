@@ -74,21 +74,18 @@
   }
 }
 
-@mixin font-face($font, $src, $font-weight: normal, $font-style: normal, $unicode: none) {
+@mixin font-face($font, $src, $font-weight: normal, $font-style: normal) {
   @font-face {
     font: {
-      style: $font-style;
-      weight: $font-weight;
       family: $font;
+      weight: $font-weight;
+      style: $font-style;
 
       display: swap;
     }
 
-    src: url("/fonts/#{$src}.woff2") format("woff2");
-    /* stylelint-disable-next-line at-rule-no-unknown */
-    @if $unicode !="none" {
-      unicode-range: #{$unicode};
-    }
+    src: url("../fonts/#{$src}.woff2") format("woff2"),
+      url("../fonts/#{$src}.woff") format("woff");
   }
 }
 
