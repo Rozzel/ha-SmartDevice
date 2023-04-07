@@ -29,7 +29,7 @@
   }
 }
 
-.advantages__item {
+.advantages__list li {
   position: relative;
   border: 1px solid $color-whisper;
   padding: 40px 45px 35px 45px;
@@ -55,16 +55,16 @@
   }
 }
 
-.advantages__icon {
+.advantages__list svg {
   fill: $color-deepsky-blue;
   margin-bottom: 20px;
 }
 
-.advantages__item:hover .advantages__icon {
+.advantages__list li:hover svg {
   fill: $color-alice-blue;
 }
 
-.advantages__heading {
+.advantages__list h3 {
   @include font($ff-robotocondensed, 400, 24px, 33px, $color-deepsky-blue);
   margin: 0;
   margin-bottom: 15px;
@@ -74,7 +74,7 @@
   }
 }
 
-.advantages__description {
+.advantages__list p {
   @include font($ff-ptmono, 400, 16px, 22px, $color-black-pearl);
   min-height: 120px;
   margin: 0;
@@ -84,7 +84,7 @@
   }
 }
 
-.advantages__item:hover .advantages__heading,
-.advantages__item:hover .advantages__description {
+.advantages__list li:hover h3,
+.advantages__list li:hover p {
   color: $color-alice-blue;
 }
