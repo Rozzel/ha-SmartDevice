@@ -9,7 +9,7 @@
   display: grid;
   column-gap: 30px;
   row-gap: 35px;
-  grid-template-columns: 345px 470px 1fr;
+  grid-template-columns: minmax(1fr, 345px) minmax(1fr, 470px) minmax(1fr, 345px);
   grid-template-rows: min-content 1fr;
   grid-template-areas:
     "footer__logo footer__sections-site footer__contacts"
@@ -45,24 +45,6 @@
   }
 }
 
-.footer__logo-text {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  justify-content: center;
-}
-
-.footer__logo-name {
-  @include font($ff-robotocondensed, 700, 25px, 29px, $color-alice-blue);
-  margin: 0;
-  margin-top: 10px;
-}
-
-.footer__logo-slogan {
-  @include font($ff-roboto, 500, 12px, 14px, $color-transparent-white);
-  margin: 0;
-}
-
 .footer__social-list {
   grid-area: footer__social-list;
   display: flex;
@@ -82,8 +64,6 @@
     margin-bottom: 30px;
   }
 }
-
-// .footer__social-item {} //FIXME
 
 .footer__sections-site {
   grid-area: footer__sections-site;

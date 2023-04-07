@@ -62,7 +62,6 @@
 
 .cover__description {
   @include font($ff-ptmono, 400, 22px, 34px, $color-alice-blue);
-  letter-spacing: 0.12em;
   position: relative;
   z-index: 3;
   max-width: 700px;

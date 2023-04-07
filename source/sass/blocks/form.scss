@@ -1,0 +1,70 @@
+.form {
+  position: relative;
+}
+
+.form input,
+.form textarea,
+.form textarea::placeholder,
+.form input::placeholder {
+  @include font($ff-ptmono, 400, 16px, 22px, $color-default-white);
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  background-color: $color-transparent-blackpearl;
+  border: none;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+.form button {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.form fieldset {
+  margin: 0;
+  padding: 0;
+  margin-top: auto;
+  border: none;
+}
+
+.form input[type="checkbox"] {
+  display: none;
+}
+
+.form input[type="checkbox"] + label {
+  @include font($ff-ptmono, 400, 14px, 16px, $color-default-white);
+  opacity: 80%;
+  display: inline-block;
+  position: relative;
+  margin-left: 26px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border: 1px solid $color-default-white;
+    border-radius: 2px;
+  }
+}
+
+.form input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -21px;
+  width: 9px;
+  height: 6px;
+  background-image: url("../img/svg/check-mark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+}

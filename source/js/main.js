@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initializeAccordion('.accordion__button', 'accordion__button--active');
 
-  initializeMoreTextToggle('[data-toggle="more-text"]', 'company__description--hidden', 'company__description--visible');
+  initMoreTextToggle('.company__container', 'company__description--hidden', 2, '[data-toggle="more-text"]');
 
   initPhoneInput(document.querySelector('.popup-question__form'));
   initPhoneInput(document.querySelector('.feedback__form'));
@@ -67,89 +67,111 @@ window.addEventListener('DOMContentLoaded', () => {
 const handleResize = (vp, id, attribute) => {
   const breakpoint = window.matchMedia(`(max-width:${vp}px)`);
   const btm = document.getElementById(id);
-  const btnOriginalText = btm.textContent;
-  const textAttribute = btm.getAttribute(attribute);
-  const text = () => {
-    if (breakpoint.matches) {
-      btm.textContent = textAttribute;
-    } else {
-      btm.textContent = btnOriginalText;
-    }
-  };
 
-  window.addEventListener('resize', text);
+  if (btm) {
+    const btnOriginalText = btm.textContent;
+    const textAttribute = btm.getAttribute(attribute);
+    const text = () => {
+      if (breakpoint.matches) {
+        btm.textContent = textAttribute;
+      } else {
+        btm.textContent = btnOriginalText;
+      }
+    };
+
+    window.addEventListener('resize', text);
+  }
 };
 
 const smoothScroll = (selector) => {
   const smoothScrollButtons = document.querySelectorAll(selector);
 
-  smoothScrollButtons.forEach((button) => {
-    button.addEventListener('click', function (event) {
-      const targetId = event.currentTarget.getAttribute('data-target');
-      const targetElement = document.querySelector(targetId);
+  if (smoothScrollButtons.length > 0) {
+    smoothScrollButtons.forEach((button) => {
+      button.addEventListener('click', function (event) {
+        const targetId = event.currentTarget.getAttribute('data-target');
+        const targetElement = document.querySelector(targetId);
 
-      if (targetElement) {
-        targetElement.scrollIntoView({behavior: 'smooth'});
-      }
+        if (targetElement) {
+          targetElement.scrollIntoView({behavior: 'smooth'});
+        }
+      });
     });
-  });
+  }
 };
 
 const initializeAccordion = (buttonSelector, buttonActive) => {
   const accordionButtons = document.querySelectorAll(buttonSelector);
 
-  accordionButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      accordionButtons.forEach((otherButton) => {
-        if (otherButton !== button) {
-          otherButton.classList.remove(buttonActive);
-          const otherPanel = otherButton.nextElementSibling;
-          otherPanel.style.maxHeight = null;
+  if (accordionButtons.length > 0) {
+    accordionButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        accordionButtons.forEach((otherButton) => {
+          if (otherButton !== button) {
+            otherButton.classList.remove(buttonActive);
+            const otherPanel = otherButton.nextElementSibling;
+            otherPanel.style.maxHeight = null;
+          }
+        });
+
+        button.classList.toggle(buttonActive);
+
+        const panel = button.nextElementSibling;
+
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = `${panel.scrollHeight}px`;
         }
       });
-
-      button.classList.toggle(buttonActive);
-
-      const panel = button.nextElementSibling;
-
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = `${panel.scrollHeight}px`;
-      }
     });
-  });
+  }
 };
 
-const initializeMoreTextToggle = (buttonSelector, hiddenContentSelector, visibleContentSelector) => {
-  const moreTextButton = document.querySelector(buttonSelector);
-  const hiddenContents = document.querySelectorAll(`.${hiddenContentSelector}`);
+const initMoreTextToggle = (containerSelector, contentSelector, contentRange, buttonSelector) => {
+  const container = document.querySelector(containerSelector);
+  const paragraphs = container.querySelectorAll('p');
+  const moreTextButton = container.querySelector(buttonSelector);
 
-  moreTextButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    hiddenContents.forEach((content) => {
-      if (content.classList.contains(hiddenContentSelector)) {
-        content.classList.remove(hiddenContentSelector);
-        content.classList.add(visibleContentSelector);
+  if (containerSelector && contentSelector && buttonSelector) {
+    const paragraphToggle = () => {
+      paragraphs.forEach((paragraph, index) => {
+        if (index >= contentRange) {
+          paragraph.classList.toggle(contentSelector);
+        }
+      });
+    };
+
+    paragraphToggle();
+
+    let flag = false;
+    moreTextButton.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      paragraphToggle();
+
+      if (!flag) {
         moreTextButton.textContent = 'Свернуть';
       } else {
-        content.classList.remove(visibleContentSelector);
-        content.classList.add(hiddenContentSelector);
         moreTextButton.textContent = 'Подробнее';
       }
+
+      flag = !flag;
     });
-  });
+  }
 };
 
 const focusFormName = (buttonSelector, inputSelector) => {
   const openModalButtons = document.querySelectorAll(buttonSelector);
   const inputElement = document.querySelector(inputSelector);
 
-  openModalButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      setTimeout(() => {
-        inputElement.focus();
-      }, 1000);
+  if (openModalButtons.length > 0 && inputElement) {
+    openModalButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        setTimeout(() => {
+          inputElement.focus();
+        }, 1000);
+      });
     });
-  });
+  }
 };
