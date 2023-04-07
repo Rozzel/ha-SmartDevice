@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initializeAccordion('.accordion__button', 'accordion__button--active');
 
-  initMoreTextToggle('[data-toggle="more-text"]', 'company__description--hidden', 'company__description--visible');
+  initMoreTextToggle('.company__container', 'company__description--hidden', 2, '[data-toggle="more-text"]');
 
   initPhoneInput(document.querySelector('.popup-question__form'));
   initPhoneInput(document.querySelector('.feedback__form'));
@@ -128,24 +128,35 @@ const initializeAccordion = (buttonSelector, buttonActive) => {
   }
 };
 
-const initMoreTextToggle = (buttonSelector, hiddenContentSelector, visibleContentSelector) => {
-  const moreTextButton = document.querySelector(buttonSelector);
-  const hiddenContents = document.querySelectorAll(`.${hiddenContentSelector}`);
+const initMoreTextToggle = (containerSelector, contentSelector, contentRange, buttonSelector) => {
+  const container = document.querySelector(containerSelector);
+  const paragraphs = container.querySelectorAll('p');
+  const moreTextButton = container.querySelector(buttonSelector);
 
-  if (moreTextButton && hiddenContents.length > 0 && visibleContentSelector) {
-    moreTextButton.addEventListener('click', (event) => {
-      event.preventDefault();
-      hiddenContents.forEach((content) => {
-        if (content.classList.contains(hiddenContentSelector)) {
-          content.classList.remove(hiddenContentSelector);
-          content.classList.add(visibleContentSelector);
-          moreTextButton.textContent = 'Свернуть';
-        } else {
-          content.classList.remove(visibleContentSelector);
-          content.classList.add(hiddenContentSelector);
-          moreTextButton.textContent = 'Подробнее';
+  if (containerSelector && contentSelector && buttonSelector) {
+    const paragraphToggle = () => {
+      paragraphs.forEach((paragraph, index) => {
+        if (index >= contentRange) {
+          paragraph.classList.toggle(contentSelector);
         }
       });
+    };
+
+    paragraphToggle();
+
+    let flag = false;
+    moreTextButton.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      paragraphToggle();
+
+      if (!flag) {
+        moreTextButton.textContent = 'Свернуть';
+      } else {
+        moreTextButton.textContent = 'Подробнее';
+      }
+
+      flag = !flag;
     });
   }
 };
