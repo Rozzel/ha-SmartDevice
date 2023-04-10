@@ -21,11 +21,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initMoreTextToggle('.company__container', 'company__description--hidden', 2, '[data-toggle="more-text"]');
 
-  initPhoneInput(document.querySelector('.popup-question__form'));
-  initPhoneInput(document.querySelector('.feedback__form'));
+  checkingPhoneInput('.popup-question__form');
+  checkingPhoneInput('.feedback__form');
 
   focusFormName('.header__btn', 'input[name="popup-name"]');
   focusFormName('.cover__btn', 'input[name="feedback-name"]');
+
   // Modules
   // ---------------------------------
 
@@ -65,10 +66,10 @@ window.addEventListener('DOMContentLoaded', () => {
 // используйте .closest(el)
 
 const handleResize = (vp, id, attribute) => {
-  const breakpoint = window.matchMedia(`(max-width:${vp}px)`);
   const btm = document.getElementById(id);
 
   if (btm) {
+    const breakpoint = window.matchMedia(`(max-width:${vp}px)`);
     const btnOriginalText = btm.textContent;
     const textAttribute = btm.getAttribute(attribute);
     const text = () => {
@@ -130,10 +131,11 @@ const initializeAccordion = (buttonSelector, buttonActive) => {
 
 const initMoreTextToggle = (containerSelector, contentSelector, contentRange, buttonSelector) => {
   const container = document.querySelector(containerSelector);
-  const paragraphs = container.querySelectorAll('p');
-  const moreTextButton = container.querySelector(buttonSelector);
 
-  if (containerSelector && contentSelector && buttonSelector) {
+  if (container) {
+    const paragraphs = container.querySelectorAll('p');
+    const moreTextButton = container.querySelector(buttonSelector);
+
     const paragraphToggle = () => {
       paragraphs.forEach((paragraph, index) => {
         if (index >= contentRange) {
@@ -158,6 +160,13 @@ const initMoreTextToggle = (containerSelector, contentSelector, contentRange, bu
 
       flag = !flag;
     });
+  }
+};
+
+const checkingPhoneInput = (element) => {
+  const selectPhoneInput = document.querySelector(element);
+  if (selectPhoneInput) {
+    initPhoneInput(selectPhoneInput);
   }
 };
 
