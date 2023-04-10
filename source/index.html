@@ -15,7 +15,6 @@
   <meta name="theme-color" content="#00b2ff">
 
   <link rel="preload" href="fonts/rouble.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="fonts/roboto-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="fonts/robotocondensed-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="fonts/robotocondensed-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="fonts/ptmono-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -204,7 +203,7 @@
             <button type="submit" class="btn btn--feedback">Задать&nbsp;вопрос</button>
 
             <fieldset>
-              <input type="checkbox" id="feedback-agreement" name="agreement" required>
+              <input type="checkbox" id="feedback-agreement" name="feedback-agreement" required>
               <label for="feedback-agreement">Я согласен на обработку персональных данных</label>
             </fieldset>
           </form>
@@ -281,13 +280,13 @@
           Оставьте контакты, мы проконсультируем вас бесплатно в удобное время
         </p>
         <form class="popup-question__form form" action="https://echo.htmlacademy.ru/" method="POST">
-          <input type="text" name="feedback-name" placeholder="Имя" aria-label="Введите ваше имя" required>
-          <input type="tel" name="feedback-phone" placeholder="Телефон" aria-label="Введите ваш телефон" required>
-          <textarea name="feedback-message" placeholder="Ваш вопрос"></textarea>
+          <input type="text" name="popup-name" placeholder="Имя" aria-label="Введите ваше имя" required>
+          <input type="tel" name="popup-phone" placeholder="Телефон" aria-label="Введите ваш телефон" required>
+          <textarea name="popup-message" placeholder="Ваш вопрос"></textarea>
           <button type="submit" class="btn btn--feedback">Отправить</button>
 
           <fieldset>
-            <input type="checkbox" id="popup-question-agreement" name="agreement" required>
+            <input type="checkbox" id="popup-question-agreement" name="popup-agreement" required>
             <label for="popup-question-agreement">Я согласен на обработку персональных данных</label>
           </fieldset>
         </form>
