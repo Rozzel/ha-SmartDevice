@@ -43,7 +43,7 @@
 }
 
 .cover__title {
-  @include font($ff-roboto, 700, 80px, 94px, $color-alice-blue);
+  @include font($ff-robotocondensed, 700, 80px, 94px, $color-alice-blue);
   letter-spacing: 0.07em;
   margin: 0;
   position: relative;
