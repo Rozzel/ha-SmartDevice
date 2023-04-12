@@ -99,6 +99,7 @@
 
 .header__btn {
   margin-right: 50px;
+
   @include vp-1023 {
     display: none;
   }
