@@ -80,6 +80,7 @@ const handleResize = (vp, id, attribute) => {
       }
     };
 
+    text();
     window.addEventListener('resize', text);
   }
 };
