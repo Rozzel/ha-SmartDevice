@@ -19,6 +19,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(min-content, 595px));
   gap: 32px;
+  padding-left: 16px;
 
   list-style-type: none;
 
@@ -57,7 +58,7 @@
 
 .advantages__list svg {
   fill: $color-deepsky-blue;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .advantages__list li:hover svg {
