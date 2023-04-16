@@ -1,19 +1,24 @@
 .footer {
   background-color: $color-black-pearl;
-  padding-top: 50px;
+  padding-top: 47px;
   padding-bottom: 55px;
 }
 
 .footer__container {
   max-width: 1222px;
   display: grid;
+  padding: 0 1px;
   column-gap: 30px;
   row-gap: 35px;
-  grid-template-columns: minmax(1fr, 345px) minmax(1fr, 470px) minmax(1fr, 345px);
+  grid-template-columns: 345px 470px 345px;
   grid-template-rows: min-content 1fr;
   grid-template-areas:
     "footer__logo footer__sections-site footer__contacts"
     "footer__social-list footer__sections-site footer__contacts";
+
+  @media (max-width: 1350px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   @include vp-1023 {
     max-width: none;
@@ -67,6 +72,11 @@
 
 .footer__sections-site {
   grid-area: footer__sections-site;
+  padding-top: 4px;
+
+  @include vp-1023 {
+    padding-top: 0;
+  }
 }
 
 .footer__sections-heading {
@@ -112,6 +122,11 @@
 
 .footer__contacts {
   grid-area: footer__contacts;
+  padding-top: 6px;
+
+  @include vp-767 {
+    padding-top: 0;
+  }
 }
 
 .footer__contacts-heading {

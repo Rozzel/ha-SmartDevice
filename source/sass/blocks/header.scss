@@ -22,7 +22,7 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 1300px;
+  max-width: 1316px;
 
   @include vp-1023 {
     max-width: none;
@@ -98,7 +98,7 @@
 }
 
 .header__btn {
-  margin-right: 50px;
+  margin-right: 70px;
 
   @include vp-1023 {
     display: none;
