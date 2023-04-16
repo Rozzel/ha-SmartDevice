@@ -4,7 +4,7 @@
   background-color: $color-black-pearl;
 
   @include vp-1023 {
-    padding-top: 60px;
+    padding-top: 34px;
     padding-bottom: 75px;
   }
 }
@@ -14,6 +14,11 @@
   flex-direction: column;
   gap: 50px;
   max-width: 1284px;
+
+  @include vp-1023 {
+    gap: 35px;
+    padding: 0 50px;
+  }
 
   @include vp-767 {
     gap: 40px;

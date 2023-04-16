@@ -30,6 +30,7 @@
     flex-direction: column;
     max-width: 670px;
     flex-shrink: 1;
+    padding: 0;
   }
 }
 
@@ -39,6 +40,10 @@
   grid-column: 2;
   margin: 0;
   margin-bottom: 15px;
+
+  @include vp-1023 {
+    margin-bottom: 5px;
+  }
 
   @include vp-767 {
     @include font($ff-robotocondensed, 400, 30px, 42px, $color-default-white);
@@ -51,6 +56,10 @@
   grid-column: 2;
   margin: 0;
   margin-bottom: 34px;
+
+  @include vp-1023 {
+    margin-bottom: 22px;
+  }
 
   @include vp-767 {
     @include font($ff-ptmono, 400, 14px, 19px, $color-default-white);
@@ -83,6 +92,10 @@
   grid-column: 2 span;
   min-height: 155px;
   margin-bottom: 10px;
+
+  @include vp-1023 {
+    padding-top: 30px;
+  }
 
   @include vp-767 {
     min-height: 180px;

@@ -2,6 +2,11 @@
   padding-top: 120px;
   padding-bottom: 120px;
 
+  @include vp-1023 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
   @include vp-767 {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -11,6 +16,10 @@
 .advantages__container {
   display: flex;
   justify-content: center;
+
+  @include vp-1023 {
+    padding: 0 43px;
+  }
 }
 
 .advantages__list {
@@ -22,6 +31,11 @@
   padding-left: 2px;
 
   list-style-type: none;
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
 
   @include vp-767 {
     display: flex;
@@ -51,6 +65,10 @@
     border: 1px solid $color-deepsky-blue;
   }
 
+  @include vp-1023 {
+    min-height: 365px;
+  }
+
   @include vp-767 {
     padding: 30px 30px 35px 30px;
   }
@@ -69,6 +87,10 @@
   @include font($ff-robotocondensed, 400, 24px, 33px, $color-deepsky-blue);
   margin: 0;
   margin-bottom: 15px;
+
+  @include vp-1023 {
+    margin-bottom: 6px;
+  }
 
   @include vp-767 {
     @include font($ff-robotocondensed, 400, 20px, 28px, $color-deepsky-blue);
