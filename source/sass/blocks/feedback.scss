@@ -16,6 +16,7 @@
   }
 
   @include vp-767 {
+    padding-top: 58px;
     padding-bottom: 90px;
   }
 }
@@ -63,6 +64,8 @@
 
   @include vp-767 {
     @include font($ff-ptmono, 400, 14px, 19px, $color-default-white);
+    max-width: 200px;
+    margin-bottom: 33px;
   }
 }
 
@@ -98,6 +101,7 @@
   }
 
   @include vp-767 {
+    padding-top: 22px;
     min-height: 180px;
   }
 }
