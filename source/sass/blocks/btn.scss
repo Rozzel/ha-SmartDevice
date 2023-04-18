@@ -1,6 +1,7 @@
 .btn {
   display: inline-flex;
   padding: 10px 20px;
+  justify-content: center;
 
   color: $color-default-white;
 
@@ -65,5 +66,7 @@
     text-align: center;
     padding: 15px 25px;
     background-color: $color-black-pearl;
+    border-radius: 3px;
+    max-width: 265px;
   }
 }

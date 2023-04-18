@@ -2,18 +2,18 @@
   position: fixed;
   width: 100%;
   top: 0;
-  min-height: 120px;
+  min-height: 110px;
   background: $black-to-bottom;
   display: flex;
   z-index: 10;
 
   @include vp-1023 {
-    min-height: 100px;
+    min-height: 95px;
     position: absolute;
   }
 
   @include vp-767 {
-    min-height: 70px;
+    min-height: 64px;
   }
 }
 
@@ -22,7 +22,7 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 1300px;
+  max-width: 1316px;
 
   @include vp-1023 {
     max-width: none;
@@ -30,13 +30,22 @@
 
   @include vp-767 {
     padding-left: 26px;
-    padding-right: 45px;
+    padding-right: 28px;
   }
 }
 
 .header__logo {
   display: flex;
   flex-direction: row;
+  margin-left: 8px;
+
+  @include vp-1023 {
+    margin-left: 26px;
+  }
+
+  @include vp-767 {
+    margin-left: 0;
+  }
 }
 
 .header__logo-img {
@@ -51,6 +60,8 @@
 
 .header__contacts {
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
   min-width: 480px;
   flex-direction: row;
   justify-content: space-between;
@@ -58,12 +69,24 @@
   @include vp-1023 {
     min-width: 80px;
     gap: 40px;
+    margin-top: -15px;
+    margin-right: 56px;
+  }
+
+  @include vp-767 {
+    margin-top: 0;
+    margin-right: 17px;
   }
 }
 
 .header__link {
   display: flex;
   gap: 15px;
+  margin-right: 15px;
+
+  @include vp-1023 {
+    margin-right: 0;
+  }
 }
 
 .header__link-text {
@@ -75,6 +98,8 @@
 }
 
 .header__btn {
+  margin-right: 70px;
+
   @include vp-1023 {
     display: none;
   }

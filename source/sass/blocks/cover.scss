@@ -8,11 +8,12 @@
   overflow: hidden;
 
   @include vp-1023 {
-    padding-top: 162px;
+    padding-top: 179px;
     min-height: 640px;
   }
 
   @include vp-767 {
+    padding-top: 150px;
     min-height: 560px;
   }
 
@@ -32,13 +33,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 0 15px;
 
   @include vp-1023 {
     margin: 0 30px;
+    padding: 0 20px;
   }
 
   @include vp-767 {
     margin: 0;
+    padding: 0 21px;
   }
 }
 
@@ -49,14 +53,17 @@
   position: relative;
   z-index: 3;
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 
   @include vp-1023 {
     @include font($ff-robotocondensed, 700, 64px, 75px, $color-alice-blue);
+    margin-bottom: 1px;
   }
 
   @include vp-767 {
     @include font($ff-robotocondensed, 700, 36px, 42px, $color-alice-blue);
+    margin-left: 5px;
+    margin-bottom: 8px;
   }
 }
 
@@ -66,14 +73,16 @@
   z-index: 3;
   max-width: 699px;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 47px;
 
   @include vp-1023 {
     @include font($ff-ptmono, 40, 22px, 34px, $color-alice-blue);
+    margin-bottom: 58px;
   }
 
   @include vp-767 {
     @include font($ff-ptmono, 400, 14px, 22px, $color-alice-blue);
+    margin-bottom: 44px;
   }
 }
 
@@ -86,7 +95,10 @@
   }
 
   @include vp-767 {
-    margin-left: 0;
+    margin-left: 3px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 272px;
   }
 }
 
